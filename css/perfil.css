@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0F2A1D; /* Fondo principal */
+  color: #E2EED4; /* Texto principal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff4d4d; /* Fondo del botón de cerrar sesión */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.logout-button:hover {
+  background-color: #cc0000; /* Hover del botón de cerrar sesión */
+}
+
+.profile-container {
+  background: #6B9071; /* Fondo del contenedor */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #E2EED4; /* Texto del encabezado */
+}
+
+.profile-field {
+  margin-bottom: 15px;
+}
+
+.profile-field label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #E2EED4; /* Color del texto de las etiquetas */
+}
+
+.profile-field span {
+  display: block;
+  padding: 10px;
+  background: #AEC3B0; /* Fondo de los campos */
+  border: 1px solid #6B9071; /* Borde de los campos */
+  border-radius: 6px;
+  color: #0F2A1D; /* Texto de los campos */
+}
+
+@media (max-width: 480px) {
+  .logout-button {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .profile-container {
+    padding: 20px;
+  }
+}

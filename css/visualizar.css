@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0F2A1D; /* Fondo principal */
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    background-color: #375534; /* Fondo del encabezado */
+    color: #E2EED4; /* Texto del encabezado */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    background-color: #FFFFFF; /* Fondo del formulario */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.field-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.field {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cedula-group {
+    display: flex;
+    flex-direction: column; /* Cambiado para que el campo y el botón estén en columna */
+    gap: 10px; /* Espaciado entre el campo de cédula y el botón */
+}
+
+/* Los campos dentro de .cedula-group tendrán un ancho 100% para llenar toda la fila */
+.cedula-group select,
+.cedula-group input {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+    padding: 8px;
+    border: 1px solid #6B9071;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.submit-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px; /* Asegura que el botón "Buscar" tenga espacio respecto al campo */
+}
+
+.submit-buttons button {
+    width: 100%; /* Asegura que el botón "Buscar" ocupe todo el ancho disponible */
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+    .cedula-group {
+        flex-direction: column; /* Coloca el campo y el botón uno debajo del otro */
+        gap: 10px; /* Espaciado entre el campo y el botón */
+    }
+
+    .cedula-group select,
+    .cedula-group input {
+        flex: 1 1 auto; /* Asegura que ocupen todo el ancho disponible */
+    }
+
+    .submit-buttons button {
+        margin-top: 10px; /* Ajusta la posición del botón en pantallas pequeñas */
+    }
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #0F2A1D; /* Color del texto de las etiquetas */
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #6B9071; /* Borde de los campos */
+    border-radius: 6px;
+    background-color: #E2EED4; /* Fondo de los campos */
+    color: #0F2A1D; /* Texto de los campos */
+}
+
+input::placeholder {
+    color: #6B9071; /* Color del texto placeholder */
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #375534; /* Fondo del botón principal */
+    color: #E2EED4; /* Texto del botón principal */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #6B9071; /* Hover del botón principal */
+}
+
+.btn-secondary {
+    background-color: #AEC3B0; /* Fondo del botón secundario */
+    color: #0F2A1D; /* Texto del botón secundario */
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #6B9071; /* Hover del botón secundario */
+}

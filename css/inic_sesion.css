@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0F2A1D; /* Fondo principal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.login-container {
+  background: #6B9071; /* Fondo del contenedor */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #E2EED4; /* Texto del encabezado */
+}
+
+.cedula-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+  .cedula-group {
+    flex-direction: row;
+  }
+}
+
+.cedula-group select,
+.cedula-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #375534; /* Borde de los campos */
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #AEC3B0; /* Fondo de los campos */
+  color: #0F2A1D; /* Texto de los campos */
+}
+
+.cedula-group input::placeholder {
+  color: #6B9071; /* Color del texto placeholder */
+}
+
+.login-container input[type="password"],
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+input[type="password"] {
+  border: 1px solid #375534; /* Borde del campo de contraseña */
+}
+
+button {
+  background-color: #375534; /* Fondo del botón */
+  color: #E2EED4; /* Texto del botón */
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6B9071; /* Hover del botón */
+}
