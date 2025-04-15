@@ -83,3 +83,16 @@ button {
 button:hover {
   background-color: #6B9071; /* Hover del botón */
 }
+
+.welcome-message {
+  position: absolute; /* Posiciona el texto de bienvenida de forma absoluta */
+  top: 10%; /* Ajusta la posición vertical */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centro horizontal */
+  text-align: center;
+  color: #E3EED4; /* Color del texto */
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000; /* Sombra para simular un borde */
+  z-index: 10; /* Asegura que el texto esté sobre otros elementos */
+}

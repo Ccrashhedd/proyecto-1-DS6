@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/css/inic_sesion.css">
 </head>
 <body>
+<div class="welcome-message">
+    <h1>Empresas Epsilon</h1>
+  </div>
   <div class="login-container">
     <h2>Iniciar Sesión</h2>
     <form id="loginForm">
