@@ -4,7 +4,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #0F2A1D; /* Fondo principal */
+  background: url('https://wallpapers.com/images/hd/dark-green-forest-1920-x-1080-t2pzfrjfpaf12aul.jpg') no-repeat center center fixed; /* Fondo con imagen */
+  background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +13,7 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 
 .login-container {
   background: #6B9071; /* Fondo del contenedor */
