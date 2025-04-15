@@ -49,10 +49,10 @@ h2 {
     background-color: #ff4d4d; /* Fondo del botón de cerrar sesión */
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
@@ -72,7 +72,7 @@ h2 {
     background-color: #375534; /* Fondo de los botones */
     color: #E2EED4; /* Texto de los botones */
     border: none;
-    padding: 8px 12px;
+    padding: 15px 25px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
