@@ -79,9 +79,8 @@
                 <div class="field"><label>Departamento</label><input type="text" placeholder="Ej: Recursos Humanos" readonly></div>
                 <div class="field"><label>Cargo</label><input type="text" placeholder="Ej: Analista" readonly></div>
                 <div class="field"><label>Salario a ganar:</label><input type="number" placeholder="xxxxx.xx" min="0" step="0.01" required readonly></div>
-                <div class="field"><label>Rol dentro de la empresa</label> <imput type="text" readonly ></imput></div>
+                <div class="field"><label>Rol dentro de la empresa</label> <input type="text" readonly ></input></div>
                 <div class="field"><label>Contraseña de usuario</label><input type="text" readonly></div>
-            
             </div>
         </div>
 
