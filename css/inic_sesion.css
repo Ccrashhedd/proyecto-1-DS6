@@ -12,7 +12,14 @@ body {
   height: 100vh;
   margin: 0;
   padding: 20px;
+  color: white; /* Asegura que el texto sea visible sobre el fondo oscuro */
 }
+
+/* Opcional: Agregar sombra al texto para mayor legibilidad */
+h1, p {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor contraste */
+}
+
 
 
 .login-container {
