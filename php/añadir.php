@@ -164,6 +164,10 @@
                 <div class="field"><label>Estado</label><select><option>Seleccione</option></select></div>
                 <div class="field"><label>Departamento</label><select><option>Seleccione</option></select></div>
                 <div class="field"><label>Cargo</label><select><option>Seleccione un departamento primero</option></select></div>
+                <div class="field">
+                    <label>Salario a ganar:</label>
+                    <input type="number" placeholder="xxxxx.xx" min="0" step="0.01" required>
+                </div>
             </div>
         </div>
 

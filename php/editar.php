@@ -78,6 +78,10 @@
                 <div class="field"><label>Estado</label><input type="text" placeholder="Ej: Activo"></div>
                 <div class="field"><label>Departamento</label><input type="text" placeholder="Ej: Recursos Humanos"></div>
                 <div class="field"><label>Cargo</label><input type="text" placeholder="Ej: Analista"></div>
+                <div class="field">
+                    <label>Salario a ganar:</label>
+                    <input type="number" placeholder="xxxxx.xx" min="0" step="0.01" required>
+                </div>
             </div>
         </div>
 

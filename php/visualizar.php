@@ -78,6 +78,10 @@
                 <div class="field"><label>Estado</label><input type="text" placeholder="Ej: Activo" readonly></div>
                 <div class="field"><label>Departamento</label><input type="text" placeholder="Ej: Recursos Humanos" readonly></div>
                 <div class="field"><label>Cargo</label><input type="text" placeholder="Ej: Analista" readonly></div>
+                <div class="field">
+                    <label>Salario a ganar:</label>
+                    <input type="number" placeholder="xxxxx.xx" min="0" step="0.01" required readonly>
+                </div>
             </div>
         </div>
         <!-- Botón para volver al perfil del administrador -->
