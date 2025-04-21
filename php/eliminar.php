@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Eliminar un empleado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/visualizar.css">
+    <link rel="stylesheet" href="../css/visualizar.css">
 </head>
 <body>
     <form id="buscarCedulaForm" method="POST" action="buscar_empleado.php">

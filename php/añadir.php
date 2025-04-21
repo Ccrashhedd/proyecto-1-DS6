@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Formulario de Registro de Empleado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/añadir.css">
+    <link rel="stylesheet" href="../css/añadir.css">
 </head>
 <body>
     <form>
