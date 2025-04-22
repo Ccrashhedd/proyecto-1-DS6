@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_us'])) {
 include 'backend/conexion.php';
 include 'backend/UserControl.php';
 
-$usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
+$usuario = obtenerAdministradorPorID($conn, $_SESSION['id_us']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,28 +35,39 @@ $usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
     <div class="profile-container">
       <h2>Perfil del Administrador</h2>
       <div class="profile-field">
-        <label>Nombre Completo:</label>
-        <span><?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?></span>
+        <label>Nombre Completo:</label><span><?php echo $usuario['nombre1'] . ' ' . $usuario['nombre2'] . ' ' . $usuario['apellido1'] . ' ' . $usuario['apellido2']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Edad:</label>
-        <span><?php echo $usuario['edad']; ?> años</span>
+        <label>Fecha de Nacimiento:</label>
+        <span><?php echo $usuario['f_nacimiento']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Sexo:</label>
-        <span><?php echo $usuario['sexo']; ?></span>
+         <label>Tipo de Sangre:</label>
+         <span><?php echo $usuario['tipo_sangre']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Tipo de Sangre:</label>
-        <span><?php echo $usuario['tipo_sangre']; ?></span>
+        <label>Cedula registrada:</label>
+        <span><?php echo $usuario['cedula']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Departamento:</label>
+        <label>ID de empresa:</label>
+        <span><?php echo $usuario['id_us']; ?></span>
+      </div>
+      <div class="profile-field">
+        <label>Correo:</label>
+        <span><?php echo $usuario['correo_instit']; ?></span>
+      </div>
+      <div class="profile-field">
+        <label>Codigo de cargo:</label>
+        <span><?php echo $usuario['cod_carg']; ?></span>
+      </div>
+      <div class="profile-field">
+        <label>Codigo de departamento:</label>
         <span><?php echo $usuario['cod_dep']; ?></span>
       </div>
       <div class="profile-field">
         <label>Fecha de Ingreso:</label>
-        <span><?php echo $usuario['fecha_ingreso']; ?></span>
+        <span><?php echo $usuario['f_contra']; ?></span>
       </div>
       <div class="profile-field">
         <label>Salario:</label>
@@ -67,7 +78,7 @@ $usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
 
   <!-- Footer con derechos reservados -->
   <footer>
-    <p>&copy; <?php echo date("Y"); ?> Empresas Epsilon. Todos los derechos reservados... O algo asi.</p>
+    <p>&copy; <?php echo date("Y"); ?> Empresas Epsilon. Todos los derechos reservados... O algo así.</p>
   </footer>
 </body>
 </html>
