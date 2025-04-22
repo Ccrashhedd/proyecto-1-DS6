@@ -1,25 +1,76 @@
+/* General */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #0F2A1D; /* Fondo principal */
     margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegurar que el body ocupe al menos toda la altura de la ventana */
+    box-sizing: border-box; /* Incluir padding y bordes en el tamaño total */
+}
+
+/* Contenedor principal */
+.main-wrapper {
+    min-height: calc(100vh - 60px); /* Altura mínima para el contenido, restando la altura del footer */
     padding: 20px;
+    box-sizing: border-box;
 }
 
-h2 {
-    background-color: #375534; /* Fondo del encabezado */
-    color: #E2EED4; /* Texto del encabezado */
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 16px; /* Tamaño de texto para el header */
 }
 
+header button {
+    padding: 12px 25px; /* Tamaño de los botones */
+    margin: 0 5px; /* Espacio entre los botones */
+    border: none;
+    background-color: #02515f;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #014d46; /* Hover de los botones */
+}
+
+/* Botones adicionales */
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #375534; /* Fondo de los botones */
+    color: #E2EED4; /* Texto de los botones */
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #6B9071; /* Hover de los botones */
+}
+
+/* Contenedor del perfil */
 .profile-container {
     background-color: #FFFFFF; /* Fondo del contenedor */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 800px;
-    margin: 100px auto 0;
+    margin: 20px auto;
 }
 
 .profile-field {
@@ -42,15 +93,13 @@ h2 {
     color: #0F2A1D; /* Texto de los campos */
 }
 
+/* Botón de cerrar sesión */
 .logout-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     background-color: #ff4d4d; /* Fondo del botón de cerrar sesión */
     color: white;
     border: none;
-    padding: 15px 20px;
-    font-size: 16px;
+    padding: 12px 18px;
+    font-size: 14px;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -60,40 +109,27 @@ h2 {
     background-color: #cc0000; /* Hover del botón de cerrar sesión */
 }
 
-.button-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.button-container button {
-    background-color: #375534; /* Fondo de los botones */
-    color: #E2EED4; /* Texto de los botones */
-    border: none;
-    padding: 15px 25px;
-    border-radius: 6px;
-    cursor: pointer;
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 60px; /* Altura fija del footer */
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box;
+    position: relative; /* Permite que el footer esté al final del flujo del documento */
 }
 
-.button-container button:hover {
-    background-color: #6B9071; /* Hover de los botones */
-}
-
+/* Media queries para dispositivos pequeños */
 @media (max-width: 480px) {
     .logout-button {
-        top: 10px;
-        right: 10px;
         padding: 8px 12px;
         font-size: 12px;
     }
 
     .button-container {
-        top: 10px;
-        left: 10px;
         gap: 5px;
     }
 
