@@ -1,5 +1,5 @@
 <?php
-/*
+
 session_start();
 
 // Verifica si la sesión de usuario está activa
@@ -13,14 +13,14 @@ include 'backend/conexion.php';
 include 'backend/UserControl.php';
 
 // Obtiene los datos del usuario basados en su ID (almacenado en la sesión)
-$usuario = obtenerEmpleadoPorID($conn, $_SESSION['id_us']);
+$usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
 
 // Verifica si el usuario no fue encontrado (es decir, no es un empleado)
 if ($usuario == null) {
     header("Location: perfil_admin.php"); // Si no es un empleado, redirige al perfil de administrador
     exit();
 }
-*/
+
 ?>
 
 <!DOCTYPE html>

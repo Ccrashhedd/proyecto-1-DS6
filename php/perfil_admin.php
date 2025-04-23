@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_us'])) {
 include 'backend/conexion.php';
 include 'backend/UserControl.php';
 
-$usuario = obtenerAdministradorPorID($conn, $_SESSION['id_us']);
+$usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
