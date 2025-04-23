@@ -58,12 +58,12 @@ $usuario = obtenerUsuarioPorID($conn, $_SESSION['id_us']);
         <span><?php echo $usuario['correo_instit']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Codigo de cargo:</label>
-        <span><?php echo $usuario['cod_carg']; ?></span>
+        <label>Cargo:</label>
+        <span><?php echo $usuario['nombre_cargo']; ?></span>
       </div>
       <div class="profile-field">
-        <label>Codigo de departamento:</label>
-        <span><?php echo $usuario['cod_dep']; ?></span>
+        <label>Departamento:</label>
+        <span><?php echo $usuario['nombre_departamento']; ?></span>
       </div>
       <div class="profile-field">
         <label>Fecha de Ingreso:</label>

@@ -66,13 +66,13 @@ if ($usuario == null) {
       <span><?php echo $usuario['correo_instit']; ?></span>
     </div>
     <div class="profile-field">
-      <label>Código de cargo:</label>
-      <span><?php echo $usuario['cod_carg']; ?></span>
-    </div>
-    <div class="profile-field">
-      <label>Código de departamento:</label>
-      <span><?php echo $usuario['cod_dep']; ?></span>
-    </div>
+        <label>Cargo:</label>
+        <span><?php echo $usuario['nombre_cargo']; ?></span>
+      </div>
+      <div class="profile-field">
+        <label>Departamento:</label>
+        <span><?php echo $usuario['nombre_departamento']; ?></span>
+      </div>
     <div class="profile-field">
       <label>Fecha de Ingreso:</label>
       <span><?php echo $usuario['f_contra']; ?></span>

@@ -21,8 +21,8 @@ function obtenerUsuarioPorID($conn, $usuario) {
             u.id_us,
             u.cedula,
             u.correo_instit,
-            u.cod_carg,
-            u.cod_dep,
+            u.cod_carg, -- Seleccionar el código del cargo
+            u.cod_dep, -- Seleccionar el código del departamento
             u.f_contra,
             u.salario,
             u.administrador, 
@@ -31,10 +31,14 @@ function obtenerUsuarioPorID($conn, $usuario) {
             COALESCE(e.apellido1, '') AS apellido1,
             COALESCE(e.apellido2, '') AS apellido2,
             COALESCE(e.f_nacimiento, '') AS f_nacimiento,
-            COALESCE(ts.nombre, '') AS tipo_sangre
+            COALESCE(ts.nombre, '') AS tipo_sangre,
+            COALESCE(c.nombre, '') AS nombre_cargo, -- Nombre del cargo
+            COALESCE(d.nombre, '') AS nombre_departamento -- Nombre del departamento
         FROM usuarios u
         LEFT JOIN empleados e ON u.cedula = e.cedula
         LEFT JOIN tip_sangre ts ON e.id_tipsang = ts.id_tipsang
+        LEFT JOIN cargo c ON u.cod_carg = c.cod_carg
+        LEFT JOIN departamento d ON u.cod_dep = d.cod_dep
         WHERE u.id_us = ? OR u.correo_instit = ?
     ";
 
@@ -51,8 +55,8 @@ function obtenerUsuarioPorID($conn, $usuario) {
             'id_us' => $usuario['id_us'],
             'cedula' => $usuario['cedula'],
             'correo_instit' => $usuario['correo_instit'],
-            'cod_carg' => $usuario['cod_carg'],
-            'cod_dep' => $usuario['cod_dep'],
+            'cod_carg' => $usuario['cod_carg'], // Código del cargo
+            'cod_dep' => $usuario['cod_dep'], // Código del departamento
             'f_contra' => $usuario['f_contra'],
             'salario' => $usuario['salario'],
             'tipo_usuario' => $usuario['administrador'] == 1 ? 'administrador' : 'empleado',
@@ -61,7 +65,9 @@ function obtenerUsuarioPorID($conn, $usuario) {
             'apellido1' => $usuario['apellido1'],
             'apellido2' => $usuario['apellido2'],
             'f_nacimiento' => $usuario['f_nacimiento'],
-            'tipo_sangre' => $usuario['tipo_sangre']
+            'tipo_sangre' => $usuario['tipo_sangre'],
+            'nombre_cargo' => $usuario['nombre_cargo'], // Nombre del cargo
+            'nombre_departamento' => $usuario['nombre_departamento'] // Nombre del departamento
         ];
     } else {
         return null;  // No se encuentra el usuario
