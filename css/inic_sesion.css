@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('https://wallpapers.com/images/hd/dark-green-forest-1920-x-1080-t2pzfrjfpaf12aul.jpg') no-repeat center center fixed; /* Fondo con imagen */
+  background: url('../imagenes/darkForest.png') no-repeat center center fixed; /* Fondo con imagen */
   background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
   display: flex;
   justify-content: center;
@@ -20,6 +20,17 @@ h1, p {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor contraste */
 }
 
+.logo-container {
+  position: absolute; /* Posiciona el contenedor de forma absoluta */
+  top: 10px; /* Espaciado desde la parte superior */
+  left: 10px; /* Espaciado desde la parte izquierda */
+  z-index: 100; /* Asegura que el logo esté sobre otros elementos */
+}
+
+.logo {
+  width: 150px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantén la proporción de la imagen */
+}
 
 
 .login-container {

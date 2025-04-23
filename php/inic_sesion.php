@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="../css/inic_sesion.css">
 </head>
 <body>
+<div class="logo-container">
+    <img src="../imagenes/newLogo.png" alt="Logo de la empresa" class="logo">
+  </div>
 <div class="welcome-message">
     <h1>Empresas Epsilon</h1>
   </div>
