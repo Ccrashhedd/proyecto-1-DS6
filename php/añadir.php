@@ -148,9 +148,26 @@
         <div class="section">
             <h2>Información de Ubicación</h2>
             <div class="field-group">
-                <div class="field"><label>Provincia</label><select><option>Seleccione una provincia</option></select></div>
-                <div class="field"><label>Distrito</label><select><option>Seleccione un distrito</option></select></div>
-                <div class="field"><label>Corregimiento</label><select><option>Seleccione un corregimiento</option></select></div>
+                <div class="field">
+                    <label>Provincia</label>
+                    <select id="provincia" onchange="cargarDistritos()" required>
+                        <option value="" disabled selected>Seleccione una provincia</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Distrito</label>
+                    <select id="distrito" onchange="cargarCorregimientos()" required>
+                        <option value="" disabled selected>Seleccione un distrito</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Corregimiento</label>
+                    <select id="corregimiento" required>
+                        <option value="" disabled selected>Seleccione un corregimiento</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field-group">
                 <div class="field"><label>Calle</label><input type="text"></div>
                 <div class="field"><label>Casa/Apto</label><input type="text"></div>
                 <div class="field"><label>Comunidad/Urbanización</label><input type="text"></div>
@@ -199,6 +216,80 @@
                 input.value = ""; // Limpia el campo
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            cargarProvincias();
+        });
+
+        function cargarProvincias() {
+            fetch('../php/backend/ubicaciones.php?tipo=provincias&id=0')
+                .then(response => response.json())
+                .then(data => {
+                    const provinciaSelect = document.getElementById('provincia');
+                    provinciaSelect.innerHTML = '<option value="" disabled selected>Seleccione una provincia</option>';
+                    data.forEach(provincia => {
+                        const option = document.createElement('option');
+                        option.value = provincia.id; // Cambiado de provincia.id_provincia a provincia.id
+                        option.textContent = provincia.nombre;
+                        provinciaSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error al cargar provincias:', error));
+        }
+
+        function cargarDistritos() {
+            const provinciaId = document.getElementById('provincia').value;
+            console.log('Provincia seleccionada:', provinciaId); // Depuración
+
+            fetch(`../php/backend/ubicaciones.php?tipo=distritos&id=${provinciaId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos de distritos:', data); // Depuración
+                    const distritoSelect = document.getElementById('distrito');
+                    distritoSelect.innerHTML = '<option value="" disabled selected>Seleccione un distrito</option>';
+                    data.forEach(distrito => {
+                        const option = document.createElement('option');
+                        option.value = distrito.id;
+                        option.textContent = distrito.nombre;
+                        distritoSelect.appendChild(option);
+                    });
+
+                    // Limpiar corregimientos al cambiar de distrito
+                    document.getElementById('corregimiento').innerHTML = '<option value="" disabled selected>Seleccione un corregimiento</option>';
+                })
+                .catch(error => console.error('Error al cargar distritos:', error));
+        }
+
+        function cargarCorregimientos() {
+            const distritoId = document.getElementById('distrito').value;
+            console.log('Distrito seleccionado:', distritoId); // Depuración
+
+            fetch(`../php/backend/ubicaciones.php?tipo=corregimientos&id=${distritoId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos de corregimientos:', data); // Depuración
+                    const corregimientoSelect = document.getElementById('corregimiento');
+                    corregimientoSelect.innerHTML = '<option value="" disabled selected>Seleccione un corregimiento</option>';
+                    data.forEach(corregimiento => {
+                        const option = document.createElement('option');
+                        option.value = corregimiento.id;
+                        option.textContent = corregimiento.nombre;
+                        corregimientoSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error al cargar corregimientos:', error));
+        }
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const provincia = document.getElementById('provincia').value;
+            const distrito = document.getElementById('distrito').value;
+            const corregimiento = document.getElementById('corregimiento').value;
+
+            if (!provincia || !distrito || !corregimiento) {
+                event.preventDefault();
+                alert('Por favor, seleccione una provincia, un distrito y un corregimiento antes de enviar el formulario.');
+            }
+        });
     </script>
 </body>
 </html>
